@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "881420286559",
+    "project_id": "rtsc-live",
+    "storage_bucket": "rtsc-live.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881420286559:android:b9685d56883c7c386b79ea",
+        "android_client_info": {
+          "package_name": "live.rtsc.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8MNsR_kC7vOZOyxMUlWHAK_ERnYGA6yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

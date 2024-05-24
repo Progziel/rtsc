@@ -1,0 +1,36 @@
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+admin.initializeApp();
+
+exports.sendTargetedNotifications = functions.firestore
+  .document('companies/{companyID}/posts/{postID}')
+  .onCreate(async (snapshot, context) => {
+    // const company = context.params.company;
+    const post = snapshot.data();
+
+    // Ensure the companyName and userName are strings
+    // const title = String(post.companyName);
+    // const content = String(post.userName);
+
+    const payload = {
+      notification: {
+        title: 'Post by ' + String(post.userName),
+        body: 'Company: ' + String(post.companyName),
+      },
+      topic: String(post.companyId),
+    };
+
+    return admin.messaging().send(payload);
+  });
+
+
+
+
+  {
+    "name": "sample-firestore",
+    "version": "0.0.1",
+    "dependencies": {
+      "firebase-admin": "^10.0.0",
+      "firebase-functions": "^4.0.0"
+    }
+  }
